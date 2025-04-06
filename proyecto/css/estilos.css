@@ -50,6 +50,11 @@ body {
   position: relative;
 }
 
+.navbar__logo {
+  color: #0f969c;
+  font-size: var(--semi-big-font);
+}
+
 .navbar ul {
   display: none;
   flex-direction: column;
@@ -67,30 +72,31 @@ body {
   color: var(--text-light);
   font-size: var(--normal-font);
   transition: color 0.3s;
-  display: block;
-  padding: 8px;
+  display: inline-block;
+  padding: 0;
+  position: relative;
+  width: max-content;
 }
 
-.navbar ul li a:hover {
-  color: var(--light-accent);
+/*Efecto de líneas con pseudoelementos*/
+.navbar ul li a::after {
+  content: "";
+  letter-spacing: 0.5px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background-color: var(--light-accent);
+  transition: 0.4s ease;
+  border-radius: 2px;
 }
 
-/* Email copiable en navbar */
-.navbar__logo a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: var(--text-light);
-  text-decoration: none;
+.navbar ul li a:hover::after {
   width: 100%;
 }
 
-.navbar__logo p {
-  font-size: var(--smaller-font);
-  display: none;
-}
-
-.navbar__logo i {
+.navbar ul li a:hover {
   color: var(--light-accent);
 }
 
@@ -316,10 +322,68 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease;
 }
 
 .item-contact img {
   width: 40px;
+}
+
+.contact-card:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.projects {
+  margin-bottom: 50px;
+}
+
+.projects a {
+  text-align: center;
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+.projects-title {
+  width: 100%;
+  padding: 20px;
+  font-size: var(--semi-big-font);
+  color: var(--accent-color);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.projects-title h2 {
+  text-align: center;
+}
+
+.projects__parent-box {
+  display: flex;
+  flex-flow: wrap row;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.projects__project-card {
+  background-color: var(--card-bg);
+  width: 400px;
+  height: 500px;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+footer {
+  background-color: var(--secondary-dark);
+  height: 50px;
+  color: var(--light-accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foot-text {
+  text-align: center;
 }
 
 /*  MEDIA QUERIES PARA TABLETS  */
