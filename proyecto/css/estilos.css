@@ -43,7 +43,7 @@ body {
   padding: 25px;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(23, 32, 37);
+  background-color: #252422;
 }
 
 .navbar ul {
@@ -88,7 +88,6 @@ body {
 /*definición de items del grid*/
 
 .item {
-  background-color: #444;
   color: #fff;
   border-radius: 5px;
   padding: 20px;
@@ -111,19 +110,25 @@ body {
   grid-row: 1 / span 2;
   flex-direction: column;
   text-align: center;
-  background-color: rgb(10, 37, 67);
+  background-color: #0d1b2a;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.profile-title {
+  margin-top: 20px;
+}
+
 .first-name {
   font-size: var(--big-font);
+  color: #e0e1dd;
 }
 
 .surnames {
   font-size: var(--semi-big-font);
-  color: rgb(106, 255, 118);
+  color: #02c39a;
+  margin-bottom: 20px;
 }
 
 .item-profile__logo {
@@ -131,6 +136,19 @@ body {
 }
 .item-profile__logo img {
   border-radius: 50%;
+  border: solid 2px;
+  border-color: #84a98c;
+}
+
+.profile-info__item {
+  margin-top: 5px;
+  display: flex;
+  gap: 5px;
+}
+
+.profile-info__item i,
+.profile-info__item p {
+  font-size: var(--smaller-font);
 }
 
 .item-about {
@@ -138,22 +156,22 @@ body {
   grid-row: 3 / span 4;
   font-size: var(--small-font);
   padding: 50px;
-  text-align: center;
-  text-justify: inter-word;
+  background-color: #1b263b;
 }
 
 .item-about h2 {
-  font-size: var(--big-font);
+  font-size: var(--biggest-font);
+  margin-bottom: 30px;
 }
 
-.item-about p,
-.item-about h2 {
-  margin-bottom: 10px;
+.item-about p {
+  margin-bottom: 20px;
 }
 
 .item-tech-skills {
   grid-column: 1 / span 3;
   grid-row: 7 / span 2;
+  background-color: #415a77;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -188,6 +206,7 @@ body {
 .item-personal-skills {
   grid-column: 1 / span 3;
   grid-row: 9 / span 2;
+  background-color: #415a77;
   display: flex;
   flex-flow: row wrap;
   font-size: var(--smaller-font);
@@ -227,6 +246,7 @@ body {
 .item-languages {
   grid-column: 3;
   grid-row: 1 / span 2;
+  background-color: #283d3b;
   display: flex;
   flex-flow: column wrap;
 }
@@ -235,7 +255,7 @@ body {
   width: 100%;
   text-align: center;
   font-size: var(--big-font);
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .language {
@@ -251,6 +271,7 @@ body {
 .item-contact {
   grid-column: 1 / span 3;
   grid-row: 11;
+  background-color: #197278;
   display: flex;
   flex-direction: column;
   align-items: center;
