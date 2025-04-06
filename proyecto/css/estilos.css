@@ -1,6 +1,6 @@
-/* Estilos base (se mantienen igual) */
+/* Estilos base */
 :root {
-  /*Tamaños de fuente*/
+  /* Tamaños de fuente */
   --biggest-font: 2rem;
   --big-font: 1.5rem;
   --semi-big-font: 1.35rem;
@@ -8,14 +8,48 @@
   --small-font: 1rem;
   --smaller-font: 0.8rem;
 
-  /*Nueva paleta de colores*/
-  --primary-dark: #1a1a2e;
-  --secondary-dark: #16213e;
-  --accent-color: #0f969c;
-  --light-accent: #0dcaf0;
-  --text-light: #f8f9fa;
+  /* Colores base (valores por defecto - serán sobrescritos por los temas) */
+  --primary-color: #1a1a2e;
+  --secondary-color: #16213e;
+  --text-color: #f8f9fa;
   --card-bg: #2d3748;
   --skill-bg: rgba(255, 255, 255, 0.1);
+  --navbar-logo-color: #0f969c;
+  --footer-bg: #16213e;
+  --profile-bg: #16213e;
+  --contact-bg: #16213e;
+  --accent-color: #0f969c;
+  --light-accent: #0dcaf0;
+}
+
+/* Tema oscuro */
+.theme-dark {
+  --primary-color: #1a1a2e;
+  --secondary-color: #16213e;
+  --text-color: #f8f9fa;
+  --card-bg: #2d3748;
+  --skill-bg: rgba(255, 255, 255, 0.1);
+  --navbar-logo-color: #0f969c;
+  --footer-bg: #16213e;
+  --profile-bg: #16213e;
+  --contact-bg: #16213e;
+  --accent-color: #0f969c;
+  --light-accent: #0dcaf0;
+}
+
+/* Tema claro */
+.theme-light {
+  --primary-color: #f8f9fa;
+  --secondary-color: #ffffff;
+  --text-color: #212529;
+  --card-bg: #e9ecef;
+  --skill-bg: rgba(0, 0, 0, 0.1);
+  --navbar-logo-color: #0d6efd;
+  --footer-bg: #e9ecef;
+  --profile-bg: #ffffff;
+  --contact-bg: #ffffff;
+  --accent-color: #0d6efd;
+  --light-accent: #0dcaf0;
 }
 
 * {
@@ -25,11 +59,13 @@
 }
 
 body {
-  background-color: var(--primary-dark);
+  background-color: var(--primary-color);
+  color: var(--text-color);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Tamaños de iconos (se mantienen igual) */
+/* Tamaños de iconos */
 .mi-icono-small {
   font-size: 12px;
 }
@@ -42,16 +78,46 @@ body {
   font-size: 40px;
 }
 
-/*  NAVBAR RESPONSIVE  */
+/* Botón de preferencia de tema */
+.color-preference-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+.theme-toggle {
+  background: var(--skill-bg);
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: var(--big-font);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+.theme-icon {
+  color: var(--text-color);
+}
+
+/* NAVBAR RESPONSIVE */
 .navbar {
   width: 100%;
   padding: 15px;
-  background-color: var(--secondary-dark);
+  background-color: var(--secondary-color);
   position: relative;
+  transition: background-color 0.3s ease;
 }
 
 .navbar__logo {
-  color: #0f969c;
+  color: var(--navbar-logo-color);
   font-size: var(--semi-big-font);
 }
 
@@ -69,7 +135,7 @@ body {
 
 .navbar ul li a {
   text-decoration: none;
-  color: var(--text-light);
+  color: var(--text-color);
   font-size: var(--normal-font);
   transition: color 0.3s;
   display: inline-block;
@@ -78,10 +144,8 @@ body {
   width: max-content;
 }
 
-/*Efecto de líneas con pseudoelementos*/
 .navbar ul li a::after {
   content: "";
-  letter-spacing: 0.5px;
   position: absolute;
   bottom: -10px;
   left: 0;
@@ -100,15 +164,14 @@ body {
   color: var(--light-accent);
 }
 
-/* Botón hamburguesa para móvil */
 .navbar__toggle {
   display: block;
-  color: var(--text-light);
+  color: var(--text-color);
   font-size: var(--big-font);
   cursor: pointer;
 }
 
-/*  GRID RESPONSIVE  */
+/* GRID RESPONSIVE */
 .grid {
   margin: 15px;
   display: grid;
@@ -117,7 +180,8 @@ body {
 }
 
 .item {
-  color: var(--text-light);
+  color: var(--text-color);
+  background-color: var(--card-bg);
   border-radius: 8px;
   padding: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -133,7 +197,7 @@ body {
 /* Perfil */
 .item-profile {
   text-align: center;
-  background-color: var(--secondary-dark);
+  background-color: var(--profile-bg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -146,7 +210,7 @@ body {
 
 .first-name {
   font-size: var(--big-font);
-  color: var(--text-light);
+  color: var(--text-color);
 }
 
 .surnames {
@@ -297,7 +361,7 @@ body {
 
 /* Contacto */
 .item-contact {
-  background-color: var(--secondary-dark);
+  background-color: var(--contact-bg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -374,7 +438,7 @@ body {
 }
 
 footer {
-  background-color: var(--secondary-dark);
+  background-color: var(--footer-bg);
   height: 50px;
   color: var(--light-accent);
   display: flex;
@@ -386,7 +450,26 @@ footer {
   text-align: center;
 }
 
-/*  MEDIA QUERIES PARA TABLETS  */
+/* EFECTOS HOVER */
+.skill__logo {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill__logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.personal-skill {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.personal-skill:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* MEDIA QUERIES PARA TABLETS */
 @media (min-width: 600px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -402,7 +485,7 @@ footer {
   }
 }
 
-/*  MEDIA QUERIES PARA ESCRITORIO  */
+/* MEDIA QUERIES PARA ESCRITORIO */
 @media (min-width: 992px) {
   .navbar {
     display: flex;
@@ -485,7 +568,7 @@ footer {
   }
 }
 
-/* Versión de escritorio grande (se mantiene igual) */
+/* Versión de escritorio grande */
 @media (min-width: 1200px) {
   .grid {
     grid-template-columns: repeat(5, 1fr);
@@ -521,26 +604,4 @@ footer {
     grid-column: 1 / span 5;
     grid-row: 6;
   }
-}
-
-/*  EFECTOS HOVER  */
-
-/* Habilidades técnicas */
-.skill__logo {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill__logo:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Habilidades blandas */
-.personal-skill {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.personal-skill:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
