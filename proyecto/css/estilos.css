@@ -401,3 +401,25 @@ body {
     grid-row: 6;
   }
 }
+
+/*  EFECTOS HOVER  */
+
+/* Habilidades técnicas */
+.skill__logo {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill__logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Habilidades blandas */
+.personal-skill {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.personal-skill:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
