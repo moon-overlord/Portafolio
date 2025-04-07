@@ -8,7 +8,7 @@
   --small-font: 1rem;
   --smaller-font: 0.8rem;
 
-  /* Colores base (valores por defecto - serán sobrescritos por los temas) */
+  /* Colores base */
   --primary-color: #1a1a2e;
   --secondary-color: #16213e;
   --text-color: #f8f9fa;
@@ -48,8 +48,8 @@
   --footer-bg: #e9ecef;
   --profile-bg: #ffffff;
   --contact-bg: #ffffff;
-  --accent-color: #0d6efd;
-  --light-accent: #0dcaf0;
+  --accent-color: #a2d2ff;
+  --light-accent: #540b0e;
 }
 
 * {
